@@ -8,6 +8,7 @@ require 'open-uri'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Create Ingredients"
+
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 ingredients = JSON.parse(open(url).read)
 ingredients["drinks"].each do |ingredient|
