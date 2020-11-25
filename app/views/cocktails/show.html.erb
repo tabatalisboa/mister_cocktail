@@ -2,10 +2,10 @@
 
 <h2>Ingredients</h2>
 <%= @cocktail.doses.each do |dose| %>
-  <ul>
-    <li>
-      <%= dose.ingredient.name %>
-      <%= dose.description %>
-    </li>
-  </ul>
+  <p><%= dose.quantity %></p>
+  <p><%= dose.ingredient.name %></p>
 <% end %>
+
+<%= render "doses/new", cocktail: @cocktail, dose: @dose %>
+
+<%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail) %>
